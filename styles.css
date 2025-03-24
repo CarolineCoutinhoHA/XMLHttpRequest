@@ -1,0 +1,127 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: #f0f0f0; /* Texto claro */
+    line-height: 1.6;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo do título principal */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #00e6e6; /* Azul futurista */
+    margin-bottom: 20px; /* Ajustei o espaçamento */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    padding: 10px 0;
+    background-color: #121212; /* Fundo escuro */
+    border-radius: 5px;
+}
+
+/* Adicionando um efeito de sublinhado futurista ao título */
+h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #00e6e6;
+    bottom: -10px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+}
+
+h1:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilo do botão */
+button {
+    padding: 15px 40px;
+    background-color: #00e6e6;
+    border: none;
+    color: #121212;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    margin-bottom: 30px; /* Espaçamento abaixo do botão */
+}
+
+button:hover {
+    background-color: #00c2c2;
+    color: #f0f0f0;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 230, 230, 0.4);
+}
+
+/* Estilo do contêiner de resultado */
+#resultado {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-height: 400px; /* Define uma altura máxima para rolagem */
+    overflow-y: auto; /* Permite rolar as postagens */
+}
+
+/* Estilo de cada post */
+.post {
+    background-color: #1a1a1a; /* Fundo escuro das postagens */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover para os posts */
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do título de cada post */
+.post h3 {
+    font-size: 1.6rem;
+    color: #00e6e6;
+    margin-bottom: 10px;
+}
+
+/* Estilo do conteúdo do post */
+.post p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* Quando os dados forem carregados */
+.dados-carregados .post {
+    background-color: #ffffff; /* Alterando fundo das postagens para branco */
+}
+
+.dados-carregados h1, .dados-carregados button {
+    background-color: #121212; /* Fundo preto */
+    color: #ffffff; /* Texto claro */
+}
